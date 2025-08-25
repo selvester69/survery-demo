@@ -5,10 +5,11 @@ This document provides the high-level design for the **Response Service**.
 ## 1. Purpose and Responsibilities
 
 The Response Service is designed for high-throughput ingestion of survey submissions. Its primary goal is to quickly and reliably capture user responses.
--   Accepts and validates incoming survey submissions.
--   Stores the response and its associated answers in its own database.
--   Publishes a `ResponseReceived` event to a message bus upon successful submission. This decouples it from the Analytics Service, which will consume this event.
--   It is optimized for write-heavy operations.
+
+- Accepts and validates incoming survey submissions.
+- Stores the response and its associated answers in its own database.
+- Publishes a `ResponseReceived` event to a message bus upon successful submission. This decouples it from the Analytics Service, which will consume this event.
+- It is optimized for write-heavy operations.
 
 ---
 
@@ -16,8 +17,9 @@ The Response Service is designed for high-throughput ingestion of survey submiss
 
 ### POST /api/responses
 
-*   **Description:** Submits a full set of answers for a given survey.
-*   **Request Body:**
+- **Description:** Submits a full set of answers for a given survey.
+- **Request Body:**
+
     ```json
     {
       "surveyId": { "type": "uuid", "required": true },
@@ -38,22 +40,25 @@ The Response Service is designed for high-throughput ingestion of survey submiss
       }
     }
     ```
-*   **Success Response (202 Accepted):** A `202` is used to indicate that the response has been accepted for processing, but the processing (e.g., by the analytics service) is not yet complete.
-    ```json
+
+ **Success Response (202 Accepted):** A `202` is used to indicate that the response has been accepted for processing, but the processing (e.g., by the analytics service) is not yet complete.
+
+```json
     {
       "responseId": "response-uuid-456",
       "status": "received"
     }
-    ```
+```
 
 ---
 
 ## 3. Database Schema
 
-*   **Database:** PostgreSQL (or a NoSQL alternative like MongoDB if the answer structure is highly variable).
-*   **Tables:** `responses`, `answers`
+- **Database:** PostgreSQL (or a NoSQL alternative like MongoDB if the answer structure is highly variable).
+- **Tables:** `responses`, `answers`
 
 ### `responses` table
+
 | Column | Data Type | Constraints | Description |
 |---|---|---|---|
 | `id` | `UUID` | `PRIMARY KEY` | Unique identifier for the submission. |
@@ -62,6 +67,7 @@ The Response Service is designed for high-throughput ingestion of survey submiss
 | `location_data`| `JSONB` | | Geolocation and device metadata. |
 
 ### `answers` table
+
 | Column | Data Type | Constraints | Description |
 |---|---|---|---|
 | `id` | `UUID` | `PRIMARY KEY` | Unique identifier for the answer. |
