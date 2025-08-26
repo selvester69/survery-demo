@@ -1,0 +1,5 @@
+com/survery/analytics/domain/Constituency.class
+com/survery/analytics/domain/Survey.class
+com/survery/analytics/domain/Response.class
+com/survery/analytics/domain/Village.class
+com/survery/analytics/domain/Panchayat.class

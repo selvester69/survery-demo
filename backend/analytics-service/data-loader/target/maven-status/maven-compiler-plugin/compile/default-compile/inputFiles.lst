@@ -1,0 +1,3 @@
+/app/backend/analytics-service/data-loader/src/main/java/com/survery/analytics/loader/dto/EnrichedSurveyDto.java
+/app/backend/analytics-service/data-loader/src/main/java/com/survery/analytics/loader/DataLoaderApplication.java
+/app/backend/analytics-service/data-loader/src/main/java/com/survery/analytics/loader/DataLoaderService.java

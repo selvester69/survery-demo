@@ -1,0 +1,4 @@
+/app/backend/analytics-service/api-service/src/main/java/com/survery/analytics/api/ApiServiceApplication.java
+/app/backend/analytics-service/api-service/src/main/java/com/survery/analytics/api/service/AnalyticsService.java
+/app/backend/analytics-service/api-service/src/main/java/com/survery/analytics/api/controller/AnalyticsController.java
+/app/backend/analytics-service/api-service/src/main/java/com/survery/analytics/api/repository/SurveyRepository.java

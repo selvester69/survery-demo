@@ -1,0 +1,5 @@
+/app/backend/analytics-service/domain/src/main/java/com/survery/analytics/domain/Panchayat.java
+/app/backend/analytics-service/domain/src/main/java/com/survery/analytics/domain/Survey.java
+/app/backend/analytics-service/domain/src/main/java/com/survery/analytics/domain/Village.java
+/app/backend/analytics-service/domain/src/main/java/com/survery/analytics/domain/Response.java
+/app/backend/analytics-service/domain/src/main/java/com/survery/analytics/domain/Constituency.java
