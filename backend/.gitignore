@@ -1,8 +1,8 @@
 # Compiled class files
-**/*.class
+*.class
 
-# # Build directories
-**/target/
+# Build directories
+**/target/*
 **/build/
 **/out/
 **/bin/
@@ -18,18 +18,18 @@
 *.rar
 
 # Maven
-# .mvn/
-# mvnw
-# mvnw.cmd
-# **/.mvn/wrapper/
-# **/maven-wrapper.*
-# .m2/
-# pom.xml.tag
-# pom.xml.releaseBackup
-# pom.xml.versionsBackup
-# pom.xml.next
-# release.properties
-# dependency-reduced-pom.xml
+.mvn/
+mvnw
+mvnw.cmd
+**/.mvn/wrapper/
+**/maven-wrapper.*
+.m2/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
 
 # Gradle
 .gradle/
@@ -115,6 +115,3 @@ replay_pid*
 *~
 *.swp
 *.swo
-**/backend/*/target/*
-
-backend/survey-service/target/classes/*
