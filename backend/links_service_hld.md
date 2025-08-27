@@ -5,10 +5,11 @@ This document provides the high-level design for the **Links Service**.
 ## 1. Purpose and Responsibilities
 
 The Links Service is a specialized service responsible for creating, managing, and tracking survey links. It acts as a "tiny URL" generator for surveys. Its responsibilities include:
--   Generating a unique, short, and shareable ID for a given `survey_id`.
--   Redirecting a user from a short link to the full survey URL.
--   Tracking basic analytics on links, such as the number of clicks.
--   Providing functionality for QR code generation based on the link.
+
+- Generating a unique, short, and shareable ID for a given `survey_id`.
+- Redirecting a user from a short link to the full survey URL.
+- Tracking basic analytics on links, such as the number of clicks.
+- Providing functionality for QR code generation based on the link.
 
 ---
 
@@ -16,14 +17,17 @@ The Links Service is a specialized service responsible for creating, managing, a
 
 ### POST /api/links
 
-*   **Description:** Create a new short link for a survey.
-*   **Request Body:**
+- **Description:** Create a new short link for a survey.
+- **Request Body:**
+
     ```json
     {
       "surveyId": { "type": "uuid", "required": true }
     }
     ```
-*   **Success Response (201 Created):**
+
+* **Success Response (201 Created):**
+
     ```json
     {
       "linkId": "aB3xZ9",
@@ -35,13 +39,14 @@ The Links Service is a specialized service responsible for creating, managing, a
 
 ### GET /s/{linkId}
 
-*   **Description:** This is a public-facing endpoint (not under `/api`) that redirects the user to the frontend application to take the survey. It also increments the click count.
-*   **Response:** `302 Found` redirect to `https://frontend.com/survey/{surveyId}`.
+- **Description:** This is a public-facing endpoint (not under `/api`) that redirects the user to the frontend application to take the survey. It also increments the click count.
+- **Response:** `302 Found` redirect to `https://frontend.com/survey/{surveyId}`.
 
 ### GET /api/links/survey/{surveyId}
 
-*   **Description:** Get all links associated with a specific survey.
-*   **Success Response (200 OK):**
+- **Description:** Get all links associated with a specific survey.
+- **Success Response (200 OK):**
+
     ```json
     [
       {
@@ -58,8 +63,9 @@ The Links Service is a specialized service responsible for creating, managing, a
 
 ## 3. Database Schema
 
-*   **Database:** PostgreSQL
-*   **Table:** `survey_links`
+- **Database:** PostgreSQL
+- **Table:** `survey_links`
+
     | Column | Data Type | Constraints | Description |
     |---|---|---|---|
     | `id` | `UUID` | `PRIMARY KEY` | Unique identifier for the link record. |

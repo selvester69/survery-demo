@@ -5,10 +5,11 @@ This document provides the high-level design for the **Survey Service**.
 ## 1. Purpose and Responsibilities
 
 The Survey Service is the authoritative source for creating and managing surveys. Its responsibilities include:
--   CRUD operations for surveys (the container for questions).
--   CRUD operations for questions within a survey.
--   Defining the structure, content, and settings of a survey.
--   Providing survey details to other services (like the UI or Response Service) so they can render or process a survey.
+
+- CRUD operations for surveys (the container for questions).
+- CRUD operations for questions within a survey.
+- Defining the structure, content, and settings of a survey.
+- Providing survey details to other services (like the UI or Response Service) so they can render or process a survey.
 
 ---
 
@@ -16,18 +17,18 @@ The Survey Service is the authoritative source for creating and managing surveys
 
 ### Survey Management
 
-*   **`POST /api/surveys`**: Create a new survey.
-*   **`GET /api/surveys`**: List all surveys for the authenticated user.
-*   **`GET /api/surveys/{surveyId}`**: Get a single survey's details, including all its questions.
-*   **`PUT /api/surveys/{surveyId}`**: Update a survey's details (e.g., title, description).
-*   **`DELETE /api/surveys/{surveyId}`**: Delete a survey and all its associated questions.
+- **`POST /api/surveys`**: Create a new survey.
+- **`GET /api/surveys`**: List all surveys for the authenticated user.
+- **`GET /api/surveys/{surveyId}`**: Get a single survey's details, including all its questions.
+- **`PUT /api/surveys/{surveyId}`**: Update a survey's details (e.g., title, description).
+- **`DELETE /api/surveys/{surveyId}`**: Delete a survey and all its associated questions.
 
 ### Question Management
 
-*   **`POST /api/surveys/{surveyId}/questions`**: Add a new question to a survey.
-*   **`GET /api/surveys/{surveyId}/questions`**: List all questions for a survey.
-*   **`PUT /api/surveys/{surveyId}/questions/{questionId}`**: Update a specific question.
-*   **`DELETE /api/surveys/{surveyId}/questions/{questionId}`**: Remove a question from a survey.
+- **`POST /api/surveys/{surveyId}/questions`**: Add a new question to a survey.
+- **`GET /api/surveys/{surveyId}/questions`**: List all questions for a survey.
+- **`PUT /api/surveys/{surveyId}/questions/{questionId}`**: Update a specific question.
+- **`DELETE /api/surveys/{surveyId}/questions/{questionId}`**: Remove a question from a survey.
 
 *(Note: Full request/response schemas for each endpoint would be specified in a more detailed document, following the user's requirement for comprehensive detail.)*
 
@@ -35,10 +36,11 @@ The Survey Service is the authoritative source for creating and managing surveys
 
 ## 3. Database Schema
 
-*   **Database:** PostgreSQL
-*   **Tables:** `surveys`, `questions`
+- **Database:** PostgreSQL
+- **Tables:** `surveys`, `questions`
 
 ### `surveys` table
+
 | Column | Data Type | Constraints | Description |
 |---|---|---|---|
 | `id` | `UUID` | `PRIMARY KEY` | Unique identifier for the survey. |
@@ -50,6 +52,7 @@ The Survey Service is the authoritative source for creating and managing surveys
 | `updated_at`| `TIMESTAMPTZ`| `DEFAULT NOW()` | Timestamp of last update. |
 
 ### `questions` table
+
 | Column | Data Type | Constraints | Description |
 |---|---|---|---|
 | `id` | `UUID` | `PRIMARY KEY` | Unique identifier for the question. |

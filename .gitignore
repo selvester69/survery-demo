@@ -1,3 +1,4 @@
+
 # Ignore Maven build output
 target/
 
@@ -12,3 +13,5 @@ target/
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
+backend/survey-response/.mvn/wrapper/maven-wrapper.properties
+backend/survey-response/target/*
