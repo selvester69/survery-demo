@@ -5,7 +5,7 @@
 
 ---
 
-# Contents
+## Contents
 
 1. Overview & Goals
 2. Actors & Roles
@@ -29,7 +29,7 @@
 * System health & operational endpoints
 * Audit logging for admin actions
 
-**Primary constraints / decisions**
+  **Primary constraints / decisions**
 
 * Language & stack: **Java (Spring Boot)** (matches previous conversation) — but the FSD is language-agnostic.
 * Auth: OAuth2 / OIDC JWT for admins; RBAC enforced on every API.
